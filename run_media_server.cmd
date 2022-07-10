@@ -1,0 +1,1 @@
+python media_server\media_server.py localhost 8888

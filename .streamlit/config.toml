@@ -1,0 +1,9 @@
+[theme]
+# primaryColor = "#7792E3"
+backgroundColor = "black"
+secondaryBackgroundColor = "black"
+textColor = "#DCDCDC"
+font = "monospace"
+
+[runner]
+fastReruns = false

@@ -1,0 +1,9 @@
+# Assign the cloud host AFTER you know the deployment URL
+# ( To deploy on Heroku you must configure a 'Procfile' and 'setup.sh',
+#   and separate the frontend and backend deployments. Launching FastAPI in
+#   Streamlit Cloud hasn't worked for me due to port binding issues. )
+
+# HOST = '<user-repo-app-key>.herokuapp.com'
+HOST = 'localhost'
+
+PORT = 8888

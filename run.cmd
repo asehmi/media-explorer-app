@@ -1,0 +1,1 @@
+streamlit run --server.port 3030 app.py

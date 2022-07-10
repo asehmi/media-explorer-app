@@ -1,0 +1,5 @@
+fastapi
+psutil==5.8.0
+requests>=2.27.1
+toml==0.10.2
+uvicorn[standard]==0.17.6

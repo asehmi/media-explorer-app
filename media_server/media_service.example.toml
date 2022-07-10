@@ -1,0 +1,61 @@
+# Singular values come above the key group values below to prevent them combining
+
+MEDIA_TYPES = [
+    'image/jpg',
+    'image/jpeg',
+    'image/png',
+    'image/gif',
+]
+
+[MEDIA_SOURCES.'LOCAL 1']
+media_folder = './images'
+media_filter = 'unsplash'
+
+[MEDIA_SOURCES.'LOCAL 2']
+media_folder = './images'
+media_filter = 'wallpaper'
+
+[MEDIA_SOURCES.LINKS]
+media_links = [
+    'https://unsplash.com/photos/mOEqOtmuPG8/download?force=true&w=640',
+    'https://unsplash.com/photos/g-krQzQo9mI/download?force=true&w=640',
+    'https://unsplash.com/photos/Q6UehpkBSnQ/download?force=true&w=640',
+    'https://unsplash.com/photos/iP8ElEhqHeY/download?force=true&w=640',
+    'https://unsplash.com/photos/q140lHKzXZY/download?force=true&w=640',
+    'https://unsplash.com/photos/Mxqvo8hhY1s/download?force=true&w=640',
+    'https://unsplash.com/photos/7_WyzplsaSE/download?force=true&w=640',
+    'https://unsplash.com/photos/fk50kc-DzSg/download?force=true&w=640',
+    'https://unsplash.com/photos/CFi7_hCXecU/download?force=true&w=640',
+    'https://unsplash.com/photos/Dymu1WiZVko/download?force=true&w=640',
+    'https://unsplash.com/photos/PHyF2mCMei0/download?force=true&w=640',
+    'https://unsplash.com/photos/ON6Xw8XEUQ8/download?force=true&w=640',
+    'https://unsplash.com/photos/D--HVF4qV0k/download?force=true&w=640',
+    'https://unsplash.com/photos/rn-0OotfzFA/download?force=true&w=640',
+    'https://unsplash.com/photos/tf3DfXxfvWE/download?force=true&w=640',
+    'https://unsplash.com/photos/aUkgcLurvQo/download?force=true&w=640',
+    'https://unsplash.com/photos/-IMlv9Jlb24/download?force=true&w=640',
+    'https://unsplash.com/photos/ESEnXckWlLY/download?force=true&w=640',
+    'https://unsplash.com/photos/mOcdke2ZQoE/download?force=true&w=640',
+    'https://unsplash.com/photos/GPPAjJicemU/download?force=true&w=640',
+    'https://unsplash.com/photos/JFeOy62yjXk/download?force=true&w=640',
+    'https://unsplash.com/photos/kEgJVDkQkbU/download?force=true&w=640',
+    'https://unsplash.com/photos/i9Q9bc-WgfE/download?force=true&w=640',
+    'https://unsplash.com/photos/tIL1v1jSoaY/download?force=true&w=640',
+    'https://unsplash.com/photos/-G3rw6Y02D0/download?force=true&w=640',
+    'https://unsplash.com/photos/xP_AGmeEa6s/download?force=true&w=640',
+    'https://unsplash.com/photos/4iTVoGYY7bM/download?force=true&w=640',
+    'https://unsplash.com/photos/mBQIfKlvowM/download?force=true&w=640',
+    'https://unsplash.com/photos/A-11N8ItHZo/download?force=true&w=640',
+    'https://unsplash.com/photos/kOqBCFsGTs8/download?force=true&w=640',
+    'https://unsplash.com/photos/8DMuvdp-vso/download?force=true&w=640',
+    'https://unsplash.com/photos/-YHSwy6uqvk/download?force=true&w=640',
+    'https://unsplash.com/photos/UC0HZdUitWY/download?force=true&w=640',
+    'https://unsplash.com/photos/kcA-c3f_3FE/download?force=true&w=640',
+    'https://unsplash.com/photos/eeqbbemH9-c/download?force=true&w=640',
+    'https://unsplash.com/photos/MqT0asuoIcU/download?force=true&w=640',
+    'https://unsplash.com/photos/ZuIDLSz3XLg/download?force=true&w=640',
+    'https://unsplash.com/photos/Mzy-OjtCI70/download?force=true&w=640',
+    'https://unsplash.com/photos/fdlZBWIP0aM/download?force=true&w=640',
+    'https://unsplash.com/photos/awj7sRviVXo/download?force=true&w=640',
+]
+media_filter = 'unsplash'
