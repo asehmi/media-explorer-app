@@ -17,7 +17,7 @@ class MediaService():
         if os.path.isfile(os.path.join(dir, 'media_service.toml')):
             service_settings = toml.load(os.path.join(dir, 'media_service.toml'))
         else:
-            service_settings = toml.load(os.path.join(dir, 'media_service.toml'))
+            service_settings = toml.load(os.path.join(dir, 'media_service.example.toml'))
 
         self.MEDIA_SOURCES, self.MEDIA_TYPES = service_settings['MEDIA_SOURCES'], service_settings['MEDIA_TYPES']
 

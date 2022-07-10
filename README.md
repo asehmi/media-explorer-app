@@ -20,7 +20,7 @@ This Streamlit app renders an image grid and provides some controls to sort and 
 
 The embedded media service object confguration of this application can be seen running in the Streamlit Cloud at the link below:
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://asehmi-st-media-service-client-app-01b2hx.streamlitapp.com/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://asehmi-media-explorer-app-client-app-7vk2lf.streamlitapp.com/)
 
 To run the `FastAPI` media server flavours of this application, clone the repo and run it locally with the appropriate configuration settings (see below). Launching FastAPI in Streamlit Cloud hasn't worked for me due to port binding issues, so instead use a hosting service that supports custom servers and ports, or build a Docker image. There are a few Streamlit Docker templates around if you search the Streamlit discussion forum.
 
