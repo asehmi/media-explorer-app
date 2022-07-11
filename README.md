@@ -1,6 +1,6 @@
 # Hybrid architecture media server, media service and Streamlit client app using FastAPI and Python
 
-    date: "2022-07-10"
+    date: "2022-07-11"
     author:
         name: "Arvindra Sehmi"
         url: "https://www.linkedin.com/in/asehmi/"
@@ -12,9 +12,17 @@
 
 ## Overview
 
-This Streamlit app renders an image grid and provides some controls to sort and layout the grid. Images can be served from a simple `FastAPI` media server or from an embedded media service object. If the media server is used, it can be started automatically from the Streamlit app on its own port and the same host (and process) as the Streamlit app, or it can be started standalone on a remote host machine.
+This app renders an image grid and provides some controls to sort and layout the grid. The app can be run as a typical monolithic (self-contained) Streamlit application, however the app architecture supports several deployment modes. For instance, images can be served from a simple `FastAPI` media server or from an embedded media service object. If FastAPI media server deployment mode is used, it can either be started automatically from the Streamlit app on its own port, in the same host (and process) as the Streamlit app, or it can be started standalone on a remote host machine.
+
+This architecture diagram will help you figure out details of the realtionship between the various parts of the implementation (i.e., the application structure, python script files, and configuration files):
+
+![Architecture](./images/media-explorer-app-deployment-architectures.png)
+
+---
 
 ![Screenshot](./images/st-media-service-screenshot.png)
+
+---
 
 ### Try the demo app yourself
 
@@ -33,7 +41,7 @@ $ cd st-media-explorer
 $ pip install -r requirements.txt
 ```
 
-If you wish to run or deploy the media server standalone:
+If you wish to deploy the media server standalone:
 
 ```bash
 $ cd st-media-explorer/media_server
@@ -50,13 +58,27 @@ $ streamlit run client_app.py
 
 The demo client app is easily customised.
 
+If you wish to run the media server standalone run the following commands (the examples are for `localhost:8888`, however if the host and port are omitted, then values from configuration will be used instead):
+
+```bash
+$ cd st-media-explorer/media_server
+$ python media_server.py localhost 8888
+
+# or...
+
+$ cd st-media-explorer/media_server
+$ uvicorn "media_server:app" --host localhost --port 8888
+```
+
 ## Configuration
 
-Media sources compatible with Streamlit's `st.image()` API are configured in `media_service.toml`. If this `toml` file isn't present the example `media_service.example.toml` is loaded instead. It should be obvious how to create your own service `toml` file. Note that two modes are supported, namely _local files_ (using the `media_folder` key) and _web links_ (using the `media_links` key). They are mutually exclusive and can't be intermixed.
+Media sources compatible with Streamlit's `st.image()` API are configured in `./media_server/media_service.toml`. If this `toml` file isn't present the example `./media_server/media_service.example.toml` is loaded instead. It should be obvious how to create your own service `toml` file. Note that two modes are supported, namely _local files_ (using the `media_folder` key) and _web links_ (using the `media_links` key). They are mutually exclusive and can't be intermixed.
 
-You can configure grid layout options in `.streamlit/secrets.toml` (used by `client_app.py`). There are options for screen width and the number of columns displayed. This data is used to generate various layout presets which are selectable in the UI. Since my screen width is 2560 pixels wide, I have set the default screen width to this value. You're free to change the display options to match your device screen resolution. (Note, you may need to account for any screen scaling factor you may have active, e.g. a 3840 wide screen with 175% scaling is effectively 2190 wide.)
+You can configure host, port and grid layout options in `.streamlit/secrets.toml` (used by `client_app.py`). There are options for screen width and the number of columns displayed. This data is used to generate various layout presets which are selectable in the UI. Since my screen width is 2560 pixels wide, I have set the default screen width to this value. You're free to change the display options to match your device screen resolution. (Note, you may need to account for any screen scaling factor you may have active, e.g. a 3840 wide screen with 175% scaling is effectively 2190 wide.)
 
-In addition to the above, this app allows you to choose from one of the following mutually exclusive modes of operation, which is configured in `.streamlit/secrets.toml`:
+The media server host and port are configured in `./media_server/media_server.toml`.
+
+In addition to the above, this app allows you to choose from one of the following mutually exclusive deployment modes of operation, which is configured in `.streamlit/secrets.toml`:
 
 ### _Remote Server_
 
